@@ -11,6 +11,7 @@ public class StackDemo {
         Stack<String> stackString = new Stack<>();
         Stack<User> stackUser = new Stack<>();
 
+        //push
         stackString.push("string 1");
         stackString.push("String 2");
         stackString.push("string 3");
