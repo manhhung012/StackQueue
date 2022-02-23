@@ -20,9 +20,11 @@ public class ArrayDequeDemo {
 
         System.out.println(arrayDequeString);
 
+        //Element()
         String stringElement = arrayDequeString.element();
         System.out.println(stringElement);
 
+        //Peek()
         String stringPeek = arrayDequeString.peek();
         System.out.println(stringPeek);
 
@@ -34,6 +36,7 @@ public class ArrayDequeDemo {
 
         System.out.println(arrayDequeString);// ArrayDeque no change
 
+        //Poll()
         String stringPoll = arrayDequeString.poll(); //Remote Element First in ArrayDeque (string 5)
         System.out.println(stringPoll);
         System.out.println(arrayDequeString);
@@ -46,7 +49,9 @@ public class ArrayDequeDemo {
         System.out.println(stringPollLast);
         System.out.println(arrayDequeString);
 
-
+        //Clear
+        arrayDequeString.clear();//Remove all elememt
+        System.out.println(arrayDequeString);
     }
 
 }
