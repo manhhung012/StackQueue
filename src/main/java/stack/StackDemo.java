@@ -32,9 +32,9 @@ public class StackDemo {
         //pop
         System.out.println("Pop() demo:");
         for (int i = 0; i < n; i++) {
-            String string = stackString.pop();
-            System.out.print("Turn " + (i + 1) + ": " + string);
-            System.out.println(". Size: "+ stackString.size());
+            String string = stackString.pop(); //pop
+            System.out.print("Turn " + (i + 1) + ": " + string); //print string when pop
+            System.out.println(". Size: "+ stackString.size()); //size of stack after pop
         }
 
         //empty
