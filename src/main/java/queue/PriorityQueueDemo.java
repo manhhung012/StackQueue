@@ -2,18 +2,19 @@ package queue;
 
 import model.User;
 
+import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class PriorityQueue {
+public class PriorityQueueDemo {
     public static void main(String[] args) {
 
         //Create PriorityQueue demo
-        Queue<String> priorityQueueStrings = new java.util.PriorityQueue<>();
-        Queue<Integer> priorityQueueInteger = new java.util.PriorityQueue<>();
-        Queue<User> priorityQueueUser = new java.util.PriorityQueue<>();
+        Queue<String> priorityQueueStrings = new PriorityQueue<>();
+        Queue<Integer> priorityQueueInteger = new PriorityQueue<>();
+        Queue<User> priorityQueueUser = new PriorityQueue<>();
 
 
-        //Sort
+        //Sort String
         priorityQueueStrings.add("G");
         priorityQueueStrings.add("A");
         priorityQueueStrings.add("V");
@@ -30,6 +31,7 @@ public class PriorityQueue {
 
         System.out.println("\n");
 
+        //Sort Integer
         priorityQueueInteger.add(6);
         priorityQueueInteger.add(4);
         priorityQueueInteger.add(1);

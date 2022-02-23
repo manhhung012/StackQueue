@@ -1,15 +1,16 @@
 package queue;
 
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class Queue {
+public class QueueDemo {
     public static void main(String[] args) {
 
         //create queue demo
-        java.util.Queue<String> stringQueue = new LinkedList<>();
-        java.util.Queue<String> stringQueueNull = new LinkedList<>();
-        java.util.Queue<String> stringQueueLimit = new ArrayBlockingQueue<>(2);
+        Queue<String> stringQueue = new LinkedList<>();
+        Queue<String> stringQueueNull = new LinkedList<>();
+        Queue<String> stringQueueLimit = new ArrayBlockingQueue<>(2);
 
         //add
         stringQueue.add("string 1");
