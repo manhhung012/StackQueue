@@ -14,13 +14,14 @@ public class PriorityQueueDemo {
         Queue<User> priorityQueueUser = new PriorityQueue<>();
 
 
-        //Sort String
+        //add with String
         priorityQueueStrings.add("G");
         priorityQueueStrings.add("A");
         priorityQueueStrings.add("V");
         priorityQueueStrings.add("B");
         priorityQueueStrings.add("W");
 
+        //poll with string
         while (true) {
             String string = priorityQueueStrings.poll();
             if (string == null) {
@@ -31,7 +32,7 @@ public class PriorityQueueDemo {
 
         System.out.println("\n");
 
-        //Sort Integer
+        //add with Integer
         priorityQueueInteger.add(6);
         priorityQueueInteger.add(4);
         priorityQueueInteger.add(1);
@@ -39,6 +40,7 @@ public class PriorityQueueDemo {
         priorityQueueInteger.add(7);
         priorityQueueInteger.add(8);
 
+        //pop with Integer
         while (true) {
             Integer integer = priorityQueueInteger.poll();
             if (integer == null) {
@@ -47,7 +49,7 @@ public class PriorityQueueDemo {
             System.out.print("Integer = " + integer + "\t");
         }
 
-        //Sort with name of user
+        //add with object user
         System.out.println("\n");
 
         priorityQueueUser.offer(new User(78, "Hung", 23));
@@ -56,6 +58,7 @@ public class PriorityQueueDemo {
         priorityQueueUser.offer(new User(6, "Hai", 23));
         priorityQueueUser.offer(new User(152, "Anh", 23));
 
+        //pop with name of user
         while (true) {
             User u = priorityQueueUser.poll();
             if (u == null) {

@@ -23,7 +23,7 @@ public class QueueDemo {
         System.out.println(stringQueue);
 
         try {
-            stringQueueLimit.add("String 3");
+            stringQueueLimit.add("String 3"); //return ex when full
         } catch (Exception e) {
             System.out.println("Queue is full");
         }
@@ -35,13 +35,13 @@ public class QueueDemo {
 
         System.out.println(stringQueue);
 
-        System.out.println(stringQueueLimit.offer("string 3")); //fales
+        System.out.println(stringQueueLimit.offer("string 3")); //return fales when full
 
         //element
         System.out.println(stringQueue.element());
 
         try {
-            System.out.println(stringQueueNull.element()); //null
+            System.out.println(stringQueueNull.element()); //throw ex when null
         } catch (Exception e) {
             System.out.println("Queue is null");
         }
@@ -49,7 +49,7 @@ public class QueueDemo {
         //peek
         System.out.println(stringQueue.peek());
 
-        System.out.println(stringQueueNull.peek()); //null
+        System.out.println(stringQueueNull.peek()); //return null
 
         //remove
         System.out.println(stringQueue.remove());
@@ -57,7 +57,7 @@ public class QueueDemo {
         System.out.println(stringQueue);
 
         try {
-            System.out.println(stringQueueNull.remove()); //null
+            System.out.println(stringQueueNull.remove()); //throw ex when null
         } catch (Exception e) {
             System.out.println("Queue is null");
         }
@@ -67,7 +67,7 @@ public class QueueDemo {
 
         System.out.println(stringQueue);
 
-        System.out.println(stringQueueNull.poll()); //null
+        System.out.println(stringQueueNull.poll()); //return null
 
     }
 }
