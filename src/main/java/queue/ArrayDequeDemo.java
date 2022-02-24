@@ -1,59 +1,61 @@
 package queue;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
 
 public class ArrayDequeDemo {
-    public static void main(String[] args) {
-        //create ArrayDeque demo
-        ArrayDeque<String> arrayDequeString = new ArrayDeque<>();
+    public String addArrayDequeDemo(String a, String b, String c, String d) {
+        String string = "";
+        ArrayDeque<String> arrayDeque = new ArrayDeque<>();
+        arrayDeque.add(a);
+        arrayDeque.addFirst(b);
+        arrayDeque.addLast(c);
+        arrayDeque.add(d);
 
-        //add
-        arrayDequeString.add("string 1");
-        arrayDequeString.addFirst("string 2");
-        arrayDequeString.addLast("string 3");
+        int n = arrayDeque.size();
 
-        System.out.println(arrayDequeString);
+        string = arrayDeque.toString();
 
-        //offer
-        arrayDequeString.offer("string 4");
-        arrayDequeString.offerFirst("string 5");
-        arrayDequeString.addLast("string 6");
-
-        System.out.println(arrayDequeString);
-
-        //element()
-        String stringElement = arrayDequeString.element();
-        System.out.println(stringElement);
-
-        //peek()
-        String stringPeek = arrayDequeString.peek();
-        System.out.println(stringPeek);
-
-        String stringPeekFirst = arrayDequeString.peekFirst();
-        System.out.println(stringPeekFirst);
-
-        String stringPeekLast = arrayDequeString.peekLast();
-        System.out.println(stringPeekLast);
-
-        System.out.println(arrayDequeString);// ArrayDeque no change
-
-        //poll()
-        String stringPoll = arrayDequeString.poll(); //Remote Element First in ArrayDeque (string 5)
-        System.out.println(stringPoll);
-        System.out.println(arrayDequeString);
-
-        String stringPollFirst = arrayDequeString.pollFirst(); //Remote Element First in ArrayDeque (string 2)
-        System.out.println(stringPollFirst);
-        System.out.println(arrayDequeString);
-
-        String stringPollLast = arrayDequeString.pollLast();
-        System.out.println(stringPollLast);
-        System.out.println(arrayDequeString);
-
-        //clear
-        arrayDequeString.clear();//Remove all elememt
-        System.out.println(arrayDequeString);
+        return string;
     }
 
+    public String elementArrayDequeDemo(ArrayDeque<String> arrayDeque) {
+        String string = "";
+        try {
+            string = arrayDeque.element();
+        } catch (Exception e) {
+            string = "Ex null";
+        }
+        return string;
+    }
+
+    public String peekArrayDequeDemo(ArrayDeque<String> arrayDeque) {
+        String string = arrayDeque.peek();
+        if(string!=null){
+            string += arrayDeque.peekFirst();
+            string += arrayDeque.peekLast();
+        }
+        return string;
+    }
+
+    public String removeArrayDequeDemo(ArrayDeque<String> arrayDeque) {
+        String string = "";
+        try {
+            string += arrayDeque.remove();
+            string += arrayDeque.removeFirst();
+            string += arrayDeque.removeLast();
+            string += " : " + arrayDeque.size();
+        } catch (Exception e) {
+            string = "Ex null";
+        }
+        return string;
+    }
+
+    public String pollArrayDequeDemo(ArrayDeque<String> arrayDeque) {
+        String string = arrayDeque.poll();
+        if(string!=null){
+            string += arrayDeque.pollFirst();
+            string += arrayDeque.pollLast();
+        }
+        return string + " : " + arrayDeque.size();
+    }
 }
