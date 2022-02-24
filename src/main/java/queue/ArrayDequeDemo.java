@@ -30,7 +30,7 @@ public class ArrayDequeDemo {
 
     public String peekArrayDequeDemo(ArrayDeque<String> arrayDeque) {
         String string = arrayDeque.peek();
-        if(string!=null){
+        if (string != null) {
             string += arrayDeque.peekFirst();
             string += arrayDeque.peekLast();
         }
@@ -52,7 +52,7 @@ public class ArrayDequeDemo {
 
     public String pollArrayDequeDemo(ArrayDeque<String> arrayDeque) {
         String string = arrayDeque.poll();
-        if(string!=null){
+        if (string != null) {
             string += arrayDeque.pollFirst();
             string += arrayDeque.pollLast();
         }

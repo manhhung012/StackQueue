@@ -1,47 +1,24 @@
 package stack;
 
-import model.User;
-
 import java.util.Stack;
 
 public class StackDemo {
-    public static void main(String[] args) {
+    public String pushStackDemo(Stack<String> stack) {
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
 
-        //create stack demo
-        Stack<String> stackString = new Stack<>();
-        Stack<User> stackUser = new Stack<>();
+        return stack.toString();
+    }
 
-        //push
-        stackString.push("string 1");
-        stackString.push("String 2");
-        stackString.push("string 3");
+    public String popStackDemo(Stack<String> stack) {
+        String string = new String();
 
-        stackUser.push(new User(123,"Hung",19));
-        stackUser.push(new User(3,"Hung",19));
-        stackUser.push(new User(198,"Hung",19));
-        stackUser.push(new User(147,"Hung",19));
-        stackUser.push(new User(369,"Hung",19));
-
-        int n = stackString.size(); //size stackString
-        int m = stackUser.size(); //size stackUser
-
-        //peek
-        System.out.println("Peek: " + stackString.peek());
-        System.out.println("After: " + stackString);
-
-        //pop
-        System.out.println("Pop() demo:");
+        int n = stack.size();
         for (int i = 0; i < n; i++) {
-            String string = stackString.pop(); //pop
-            System.out.print("Turn " + (i + 1) + ": " + string); //print string when pop
-            System.out.println(". Size: "+ stackString.size()); //size of stack after pop
+            string += stack.pop() + "/ ";
         }
 
-        //empty
-        System.out.println("stackString is empty? : "+ stackString.empty());
-
-        for (int i =0; i<m;i++){
-            System.out.println(stackUser.pop());
-        }
+        return string;
     }
 }
