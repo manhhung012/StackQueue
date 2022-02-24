@@ -19,6 +19,10 @@ public class User implements Comparable<User> {
         return this.name.compareTo(o.name);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "User{" +
