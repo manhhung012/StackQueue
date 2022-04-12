@@ -1,38 +1,37 @@
 package stack;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 import java.util.Stack;
-
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class StackDemoTest {
 
-    public Stack<String> stack(int n) {
-        Stack<String> stackD = new Stack<>();
-        for (int i = 0; i < n; i++) {
-            stackD.push("string " + i);
-        }
-
-        return stackD;
+  public Stack<String> stack(int n) {
+    Stack<String> stackD = new Stack<>();
+    for (int i = 0; i < n; i++) {
+      stackD.push("string " + i);
     }
 
-    @Test
-    public void testPushStackDemo() {
-        StackDemo stackDemo = new StackDemo();
+    return stackD;
+  }
 
-        String result = stackDemo.pushStackDemo(stack(0));
+  @Test
+  public void testPushStackDemo() {
+    StackDemo stackDemo = new StackDemo();
 
-        assertEquals("[A, B, C]", result);
-    }
+    String result = stackDemo.pushStackDemo(stack(0));
 
-    @Test
-    public void testPopStackDemo() {
-        StackDemo stackDemo = new StackDemo();
+    assertEquals("[A, B, C]", result);
+  }
 
-        String result = stackDemo.popStackDemo(stack(3));
-        String exp = "string 2/ string 1/ string 0/ ";
+  @Test
+  public void testPopStackDemo() {
+    StackDemo stackDemo = new StackDemo();
 
-        assertEquals(exp, result);
-    }
+    String result = stackDemo.popStackDemo(stack(3));
+    String exp = "string 2/ string 1/ string 0/ ";
+
+    assertEquals(exp, result);
+  }
 }

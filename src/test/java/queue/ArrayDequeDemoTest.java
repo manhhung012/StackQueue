@@ -1,96 +1,94 @@
 package queue;
 
-import org.junit.Test;
-
-import java.util.ArrayDeque;
-
 import static org.junit.Assert.*;
 
+import java.util.ArrayDeque;
+import org.junit.Test;
+
 public class ArrayDequeDemoTest {
-    public ArrayDeque<String> arrayDeque = new ArrayDeque<>();
+  public ArrayDeque<String> arrayDeque = new ArrayDeque<>();
 
-    @Test
-    public void testAddArrayDequeDemo() {
-        ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
-        String Exc = "[B, A, C, D]";
-        String result = arrayDequeDemo.addArrayDequeDemo("A","B","C","D");
+  @Test
+  public void testAddArrayDequeDemo() {
+    ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
+    String Exc = "[B, A, C, D]";
+    String result = arrayDequeDemo.addArrayDequeDemo("A", "B", "C", "D");
 
-        assertEquals(Exc,result);
-    }
+    assertEquals(Exc, result);
+  }
 
-    @Test
-    public void testElementArrayDequeDemo() {
-        arrayDeque.add("A");
-        arrayDeque.add("B");
-        ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
+  @Test
+  public void testElementArrayDequeDemo() {
+    arrayDeque.add("A");
+    arrayDeque.add("B");
+    ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
 
-        String result = arrayDequeDemo.elementArrayDequeDemo(arrayDeque);
+    String result = arrayDequeDemo.elementArrayDequeDemo(arrayDeque);
 
-        assertEquals("A",result);
+    assertEquals("A", result);
 
-        arrayDeque.clear();
+    arrayDeque.clear();
 
-        String resultNull = arrayDequeDemo.elementArrayDequeDemo(arrayDeque);
+    String resultNull = arrayDequeDemo.elementArrayDequeDemo(arrayDeque);
 
-        assertEquals("Ex null",resultNull);
+    assertEquals("Ex null", resultNull);
+  }
 
-    }
+  @Test
+  public void testPeekArrayDequeDemo() {
+    arrayDeque.add("A");
+    arrayDeque.add("B");
+    arrayDeque.add("C");
+    ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
 
-    @Test
-    public void testPeekArrayDequeDemo() {
-        arrayDeque.add("A");
-        arrayDeque.add("B");
-        arrayDeque.add("C");
-        ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
+    String result = arrayDequeDemo.peekArrayDequeDemo(arrayDeque);
 
-        String result = arrayDequeDemo.peekArrayDequeDemo(arrayDeque);
+    assertEquals("AAC", result);
 
-        assertEquals("AAC",result);
+    arrayDeque.clear();
 
-        arrayDeque.clear();
+    String resultNull = arrayDequeDemo.peekArrayDequeDemo(arrayDeque);
 
-        String resultNull = arrayDequeDemo.peekArrayDequeDemo(arrayDeque);
+    assertEquals(null, resultNull);
+  }
 
-        assertEquals(null,resultNull);
-    }
+  @Test
+  public void testRemoveArrayDequeDemo() {
+    arrayDeque.add("A");
+    arrayDeque.add("B");
+    arrayDeque.add("C");
+    arrayDeque.add("D");
+    arrayDeque.add("E");
+    ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
 
-    @Test
-    public void testRemoveArrayDequeDemo() {
-        arrayDeque.add("A");
-        arrayDeque.add("B");
-        arrayDeque.add("C");
-        arrayDeque.add("D");
-        arrayDeque.add("E");
-        ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
+    String result = arrayDequeDemo.removeArrayDequeDemo(arrayDeque);
 
-        String result = arrayDequeDemo.removeArrayDequeDemo(arrayDeque);
+    assertEquals("ABE : 2", result);
 
-        assertEquals("ABE : 2",result);
+    arrayDeque.clear();
 
-        arrayDeque.clear();
+    String resultNull = arrayDequeDemo.removeArrayDequeDemo(arrayDeque);
 
-        String resultNull = arrayDequeDemo.removeArrayDequeDemo(arrayDeque);
+    assertEquals("Ex null", resultNull);
+  }
 
-        assertEquals("Ex null",resultNull);
-    }
+  @Test
+  public void testollArrayDequeDemo() {
+    arrayDeque.add("A");
+    arrayDeque.add("B");
+    arrayDeque.add("C");
+    arrayDeque.add("D");
+    arrayDeque.add("E");
+    ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
 
-    @Test
-    public void testollArrayDequeDemo() {
-        arrayDeque.add("A");
-        arrayDeque.add("B");
-        arrayDeque.add("C");
-        arrayDeque.add("D");
-        arrayDeque.add("E");
-        ArrayDequeDemo arrayDequeDemo = new ArrayDequeDemo();
+    String result = arrayDequeDemo.pollArrayDequeDemo(arrayDeque);
 
-        String result = arrayDequeDemo.pollArrayDequeDemo(arrayDeque);
+    assertEquals("ABE : 2", result);
 
-        assertEquals("ABE : 2",result);
+    arrayDeque.clear();
 
-        arrayDeque.clear();
+    String resultNull = arrayDequeDemo.pollArrayDequeDemo(arrayDeque);
 
-        String resultNull = arrayDequeDemo.pollArrayDequeDemo(arrayDeque);
-
-        assertEquals("null : 0", resultNull);
-    }
+    assertEquals("null : 0", resultNull);
+  }
 }
