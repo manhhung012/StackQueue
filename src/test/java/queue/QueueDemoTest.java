@@ -1,98 +1,97 @@
 package queue;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class QueueDemoTest {
-    public List<String> listStringDemo(int n) {
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            list.add("String " + i);
-        }
-
-        return list;
+  public List<String> listStringDemo(int n) {
+    List<String> list = new ArrayList<>();
+    for (int i = 0; i < n; i++) {
+      list.add("String " + i);
     }
 
-    public Queue<String> queueStringDemo(int n) {
-        Queue<String> queue = new LinkedList<>();
-        for (int i = 0; i < n; i++) {
-            queue.add("String " + i);
-        }
+    return list;
+  }
 
-        return queue;
+  public Queue<String> queueStringDemo(int n) {
+    Queue<String> queue = new LinkedList<>();
+    for (int i = 0; i < n; i++) {
+      queue.add("String " + i);
     }
 
-    @Test
-    public void testAddQueueDemo() {
-        QueueDemo queue = new QueueDemo();
+    return queue;
+  }
 
-        String result = queue.addQueueDemo(listStringDemo(3));
-        String resultFull = queue.addQueueDemo(listStringDemo(4));
+  @Test
+  public void testAddQueueDemo() {
+    QueueDemo queue = new QueueDemo();
 
-        assertEquals("Queue size: 3", result);
-        assertEquals("Queue is full", resultFull);
-    }
+    String result = queue.addQueueDemo(listStringDemo(3));
+    String resultFull = queue.addQueueDemo(listStringDemo(4));
 
-    @Test
-    public void testOfferQueueDemo() {
-        QueueDemo queue = new QueueDemo();
+    assertEquals("Queue size: 3", result);
+    assertEquals("Queue is full", resultFull);
+  }
 
-        Boolean result = queue.offerQueueDemo(listStringDemo(3));
-        Boolean resultFull = queue.offerQueueDemo(listStringDemo(4));
+  @Test
+  public void testOfferQueueDemo() {
+    QueueDemo queue = new QueueDemo();
 
-        assertTrue(result);
-        assertFalse(resultFull);
-    }
+    Boolean result = queue.offerQueueDemo(listStringDemo(3));
+    Boolean resultFull = queue.offerQueueDemo(listStringDemo(4));
 
-    @Test
-    public void testElementQueueDemo() {
-        QueueDemo queue = new QueueDemo();
+    assertTrue(result);
+    assertFalse(resultFull);
+  }
 
-        String result = queue.elementQueueDemo(queueStringDemo(3));
-        String resultNull = queue.elementQueueDemo(queueStringDemo(0));
+  @Test
+  public void testElementQueueDemo() {
+    QueueDemo queue = new QueueDemo();
 
-        assertEquals("String 0", result);
-        assertEquals("Queue is null", resultNull);
-    }
+    String result = queue.elementQueueDemo(queueStringDemo(3));
+    String resultNull = queue.elementQueueDemo(queueStringDemo(0));
 
-    @Test
-    public void testPeekQueueDemo() {
-        QueueDemo queue = new QueueDemo();
+    assertEquals("String 0", result);
+    assertEquals("Queue is null", resultNull);
+  }
 
-        String result = queue.peekQueueDemo(queueStringDemo(3));
-        String resultFull = queue.peekQueueDemo(queueStringDemo(0));
+  @Test
+  public void testPeekQueueDemo() {
+    QueueDemo queue = new QueueDemo();
 
-        assertEquals("String 0 : 3", result);
+    String result = queue.peekQueueDemo(queueStringDemo(3));
+    String resultFull = queue.peekQueueDemo(queueStringDemo(0));
 
-        assertEquals("null : 0", resultFull);
-    }
+    assertEquals("String 0 : 3", result);
 
-    @Test
-    public void testRemoveQueueDemo() {
-        QueueDemo queue = new QueueDemo();
+    assertEquals("null : 0", resultFull);
+  }
 
-        String result = queue.removeQueueDemo(queueStringDemo(3));
-        String resultNull = queue.removeQueueDemo(queueStringDemo(0));
+  @Test
+  public void testRemoveQueueDemo() {
+    QueueDemo queue = new QueueDemo();
 
-        assertEquals("String 0 : 2", result);
-        assertEquals("Queue is null", resultNull);
-    }
+    String result = queue.removeQueueDemo(queueStringDemo(3));
+    String resultNull = queue.removeQueueDemo(queueStringDemo(0));
 
-    @Test
-    public void testPollQueueDemo() {
-        QueueDemo queue = new QueueDemo();
+    assertEquals("String 0 : 2", result);
+    assertEquals("Queue is null", resultNull);
+  }
 
-        String result = queue.pollQueueDemo(queueStringDemo(3));
-        String resultFull = queue.pollQueueDemo(queueStringDemo(0));
+  @Test
+  public void testPollQueueDemo() {
+    QueueDemo queue = new QueueDemo();
 
-        assertEquals("String 0 : 2", result);
+    String result = queue.pollQueueDemo(queueStringDemo(3));
+    String resultFull = queue.pollQueueDemo(queueStringDemo(0));
 
-        assertEquals("null : 0", resultFull);
-    }
+    assertEquals("String 0 : 2", result);
+
+    assertEquals("null : 0", resultFull);
+  }
 }
